@@ -3,14 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Christmas92</title>
+    <title>Ubuntu14.04安装配置Gitlab | Christmas92</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Christmas92">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程https://about.gitlab.com/downloads/
+
+1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ durin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu14.04安装配置Gitlab">
+<meta property="og:url" content="http://yoursite.com/2016/07/22/Ubuntu14-04配置Gitlab/index.html">
 <meta property="og:site_name" content="Christmas92">
+<meta property="og:description" content="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程https://about.gitlab.com/downloads/
+
+1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ durin">
+<meta property="og:updated_time" content="2016-07-22T07:08:21.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Christmas92">
+<meta name="twitter:title" content="Ubuntu14.04安装配置Gitlab">
+<meta name="twitter:description" content="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程https://about.gitlab.com/downloads/
+
+1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ durin">
     
 
     
@@ -201,8 +211,7 @@
 </aside>
 
             
-            <section id="main">
-    <article id="post-Ubuntu14-04配置Gitlab" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Ubuntu14-04配置Gitlab" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -210,8 +219,8 @@
             <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/22/Ubuntu14-04配置Gitlab/">Ubuntu14.04安装配置Gitlab</a>
+        <h1 class="article-title" itemprop="name">
+            Ubuntu14.04安装配置Gitlab
         </h1>
     
 
@@ -239,15 +248,56 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h4 id="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程"><a href="#关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程" class="headerlink" title="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程"></a><font face="黑体" >关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程</font></h4><font face="黑体" size=4 ><a href="https://about.gitlab.com/downloads/">https://about.gitlab.com/downloads/</a></font>
+            
+            <h4 id="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程"><a href="#关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程" class="headerlink" title="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程"></a><font face="黑体">关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程</font></h4><font face="黑体" size="4"><a href="https://about.gitlab.com/downloads/" target="_blank" rel="external">https://about.gitlab.com/downloads/</a></font>
 
-<h4 id="1-Install-and-configure-the-necessary-dependencies"><a href="#1-Install-and-configure-the-necessary-dependencies" class="headerlink" title="1. Install and configure the necessary dependencies"></a>1. Install and configure the necessary dependencies</h4><p>If you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md">configure a custom SMTP server</a> and <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md#smtp-on-localhost">configure it as an SMTP server.</a></p>
+<h4 id="1-Install-and-configure-the-necessary-dependencies"><a href="#1-Install-and-configure-the-necessary-dependencies" class="headerlink" title="1. Install and configure the necessary dependencies"></a>1. Install and configure the necessary dependencies</h4><p>If you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md" target="_blank" rel="external">configure a custom SMTP server</a> and <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md#smtp-on-localhost" target="_blank" rel="external">configure it as an SMTP server.</a></p>
 <p>On Centos 6 and 7, the commands below will also open HTTP and SSH access in the system firewall.</p>
 <pre><code>sudo apt-get install curl openssh-server ca-certificates postfix
-</code></pre></p>
-            <p class="article-more-link">
-                <a href="/2016/07/22/Ubuntu14-04配置Gitlab/#more">Read More</a>
-            </p>
+</code></pre><a id="more"></a>
+<h4 id="2-Add-the-GitLab-package-server-and-install-the-package"><a href="#2-Add-the-GitLab-package-server-and-install-the-package" class="headerlink" title="2. Add the GitLab package server and install the package"></a>2. Add the GitLab package server and install the package</h4><pre><code>curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+sudo apt-get install gitlab-ce
+</code></pre><p>If you are not comfortable installing the repository through a piped script, you can find the <a href="https://packages.gitlab.com/gitlab/gitlab-ce/install" target="_blank" rel="external">entire script here</a> and <a href="https://packages.gitlab.com/gitlab/gitlab-ce" target="_blank" rel="external">select and download the package manually</a> and install using</p>
+<pre><code>curl -LJO https://packages.gitlab.com/gitlab/gitlab-ce/packages/ubuntu/precise/gitlab-ce-XXX.deb/download
+dpkg -i gitlab-ce-XXX.deb
+</code></pre><h4 id="3-Configure-and-start-GitLab"><a href="#3-Configure-and-start-GitLab" class="headerlink" title="3. Configure and start GitLab"></a>3. Configure and start GitLab</h4><pre><code>sudo gitlab-ctl reconfigure
+</code></pre><h4 id="执行第三步之前可对-etc-gitlab-gitlab-rb进行修改配置"><a href="#执行第三步之前可对-etc-gitlab-gitlab-rb进行修改配置" class="headerlink" title="执行第三步之前可对/etc/gitlab/gitlab.rb进行修改配置"></a>执行第三步之前可对/etc/gitlab/gitlab.rb进行修改配置</h4><ol>
+<li>将external_url ‘<font>http</font>://gitadmin-VirtualBox’修改为external_url ‘<font>http</font>://IP地址’或进行DNS解析，使其他内网主机能够访问</li>
+<li>设置SMTP使其能够进行自动发送邮件提示(所提供邮箱必须开启STMP服务)<br><a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md" target="_blank" rel="external">configure a custom SMTP server</a><br>上述提供了大部分邮箱的配置，下面提供163邮箱和QQ邮箱的配置：</li>
+</ol>
+<pre><code>#163邮箱配置
+gitlab_rails[&apos;smtp_address&apos;] = &quot;smtp.163.com&quot;
+gitlab_rails[&apos;smtp_port&apos;] = 25
+gitlab_rails[&apos;smtp_user_name&apos;] = &quot;xxx@163.com&quot;  //邮箱
+gitlab_rails[&apos;smtp_password&apos;] = &quot;xxxxx&quot;  //密码
+gitlab_rails[&apos;smtp_domain&apos;] = &quot;163.com&quot;
+gitlab_rails[&apos;smtp_authentication&apos;] = :login
+gitlab_rails[&apos;smtp_enable_starttls_auto&apos;] = true  
+
+#修改gitlab配置的发信人
+gitlab_rails[&apos;gitlab_email_from&apos;] = &quot;xxx@163.com&quot;
+user[&quot;git_user_email&quot;] = &quot;xxx@163.com&quot;
+
+#QQ邮箱配置
+gitlab_rails[&apos;smtp_enable&apos;] = true
+gitlab_rails[&apos;smtp_address&apos;] = &quot;smtp.qq.com&quot;
+gitlab_rails[&apos;smtp_port&apos;] = 25
+gitlab_rails[&apos;smtp_user_name&apos;] = &quot;xxx@qq.com&quot;
+gitlab_rails[&apos;smtp_password&apos;] = &quot;xxxxx&quot;   //开启smtp的独立密码
+gitlab_rails[&apos;smtp_authentication&apos;] = :plain
+gitlab_rails[&apos;smtp_enable_starttls_auto&apos;] = true
+
+##修改gitlab配置的发信人
+gitlab_rails[&apos;gitlab_email_from&apos;] = &quot;xxx@qq.com&quot;
+user[&quot;git_user_email&quot;] = &quot;xxx@qq.com&quot;
+</code></pre><h4 id="4-Browse-to-the-hostname-and-login"><a href="#4-Browse-to-the-hostname-and-login" class="headerlink" title="4. Browse to the hostname and login"></a>4. Browse to the hostname and login</h4><p>On your first visit, you’ll be redirected to a password reset screen to provide the password for the initial administrator account. Enter your desired password and you’ll be redirected back to the login screen.</p>
+<p>The default account’s username is root. Provide the password you created earlier and login. After login you can change the username if you wish.</p>
+<p>输入<font>http<font>://IP地址(gitlab.rb中配置的url)，首次访问会要求你修改管理员(root)密码。修改完成后登入，管理员用户名为root</font></font></p>
+<h4 id="5-生成和上传SSH-key"><a href="#5-生成和上传SSH-key" class="headerlink" title="5. 生成和上传SSH key"></a>5. 生成和上传SSH key</h4><p>设置管理员的邮箱(eg.admin@163.com)，生成SSH key的时候要用到。<br>生成SSH key:<br>打开Git Bash</p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;admin@163.com&quot;
+</code></pre><p>按三下空格，表示生成五米密钥对，此时会在提示目录下生成一个密钥对，id_rsa为私钥，id_rsa.pub为公钥，公钥是要上传的。打开公钥文件复制里面的内容，在Gitlab管理后台Profile Setting-&gt;SSH Keys处粘贴，Add key完成。</p>
+<p>上传SSH key后可以使用SSH进行远程pull/push</p>
+
         
         </div>
         <footer class="article-footer">
@@ -331,8 +381,23 @@
         </footer>
     </div>
     
+        
+
+    
 </article>
 
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
 
 </section>
             
@@ -431,11 +496,13 @@
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = 'http://yoursite.com/2016/07/22/Ubuntu14-04配置Gitlab/';
+        
+        this.page.identifier = 'Ubuntu14-04配置Gitlab';
     };
     (function() {
         var d = document, s = d.createElement('script');
-        s.src = '//' + 'christmas92' + '.disqus.com/count.js';
+        s.src = '//' + 'christmas92' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
