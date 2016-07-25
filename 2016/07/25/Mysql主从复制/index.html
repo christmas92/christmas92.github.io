@@ -3,24 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Ubuntu14.04安装配置Gitlab | Christmas92</title>
+    <title>Mysql主从复制 | Christmas92</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程https://about.gitlab.com/downloads/
-
-1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ durin">
+    <meta name="description" content="1.修改主服务器master:修改主服务器Mysql配置文件my.cnf123[mysqld]log-bin=mysql-bin   //[必须]启用二进制日志server-id=222      //[必须]服务器唯一ID，默认是1，一般取IP最后一段
+修改完成后重启生效。
+2.在主服务器上建立帐户并授权slave:12mysql&amp;gt;GRANT REPLICATION SLAVE ON *.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu14.04安装配置Gitlab">
-<meta property="og:url" content="http:christmas92.github.io/2016/07/22/Ubuntu14-04配置Gitlab/index.html">
+<meta property="og:title" content="Mysql主从复制">
+<meta property="og:url" content="http:christmas92.github.io/2016/07/25/Mysql主从复制/index.html">
 <meta property="og:site_name" content="Christmas92">
-<meta property="og:description" content="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程https://about.gitlab.com/downloads/
-
-1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ durin">
-<meta property="og:updated_time" content="2016-07-25T07:28:31.319Z">
+<meta property="og:description" content="1.修改主服务器master:修改主服务器Mysql配置文件my.cnf123[mysqld]log-bin=mysql-bin   //[必须]启用二进制日志server-id=222      //[必须]服务器唯一ID，默认是1，一般取IP最后一段
+修改完成后重启生效。
+2.在主服务器上建立帐户并授权slave:12mysql&amp;gt;GRANT REPLICATION SLAVE ON *.">
+<meta property="og:updated_time" content="2016-07-25T07:23:07.310Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu14.04安装配置Gitlab">
-<meta name="twitter:description" content="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程https://about.gitlab.com/downloads/
-
-1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ durin">
+<meta name="twitter:title" content="Mysql主从复制">
+<meta name="twitter:description" content="1.修改主服务器master:修改主服务器Mysql配置文件my.cnf123[mysqld]log-bin=mysql-bin   //[必须]启用二进制日志server-id=222      //[必须]服务器唯一ID，默认是1，一般取IP最后一段
+修改完成后重启生效。
+2.在主服务器上建立帐户并授权slave:12mysql&amp;gt;GRANT REPLICATION SLAVE ON *.">
     
 
     
@@ -211,7 +211,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-Ubuntu14-04配置Gitlab" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Mysql主从复制" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -220,7 +220,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Ubuntu14.04安装配置Gitlab
+            Mysql主从复制
         </h1>
     
 
@@ -229,8 +229,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/07/22/Ubuntu14-04配置Gitlab/">
-            <time datetime="2016-07-21T16:00:00.000Z" itemprop="datePublished">2016-07-22</time>
+        <a href="/2016/07/25/Mysql主从复制/">
+            <time datetime="2016-07-25T03:02:41.000Z" itemprop="datePublished">2016-07-25</time>
         </a>
     </div>
 
@@ -239,7 +239,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Git/">Git</a>, <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/项目管理/">项目管理</a>
+        <a class="tag-link" href="/tags/Mysql/">Mysql</a>
     </div>
 
                     </div>
@@ -249,25 +249,17 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h4 id="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程"><a href="#关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程" class="headerlink" title="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程"></a><font face="黑体">关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程</font></h4><font face="黑体" size="4"><a href="https://about.gitlab.com/downloads/" target="_blank" rel="external">https://about.gitlab.com/downloads/</a></font>
-
-<h4 id="1-Install-and-configure-the-necessary-dependencies"><a href="#1-Install-and-configure-the-necessary-dependencies" class="headerlink" title="1. Install and configure the necessary dependencies"></a>1. Install and configure the necessary dependencies</h4><p>If you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md" target="_blank" rel="external">configure a custom SMTP server</a> and <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md#smtp-on-localhost" target="_blank" rel="external">configure it as an SMTP server.</a></p>
-<p>On Centos 6 and 7, the commands below will also open HTTP and SSH access in the system firewall.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install curl openssh-server ca-certificates postfix</div></pre></td></tr></table></figure></p>
+            <h4 id="1-修改主服务器master"><a href="#1-修改主服务器master" class="headerlink" title="1.修改主服务器master:"></a>1.修改主服务器master:</h4><p>修改主服务器Mysql配置文件my.cnf<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="section">[mysqld]</span></div><div class="line"><span class="attr">log-bin</span>=mysql-bin   //[必须]启用二进制日志</div><div class="line"><span class="attr">server-id</span>=<span class="number">222</span>      //[必须]服务器唯一ID，默认是<span class="number">1</span>，一般取IP最后一段</div></pre></td></tr></table></figure></p>
+<p>修改完成后重启生效。</p>
+<h4 id="2-在主服务器上建立帐户并授权slave"><a href="#2-在主服务器上建立帐户并授权slave" class="headerlink" title="2.在主服务器上建立帐户并授权slave:"></a>2.在主服务器上建立帐户并授权slave:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;GRANT REPLICATION SLAVE ON *.* to <span class="string">'user'</span>@<span class="string">'%'</span> identified by <span class="string">'password'</span>;</div><div class="line">//一般不用root帐号,<span class="string">'%'</span>表示所有客户端都可能连,此处可用具体客户端IP代替,如192.168.145.226,加强安全。</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h4 id="2-Add-the-GitLab-package-server-and-install-the-package"><a href="#2-Add-the-GitLab-package-server-and-install-the-package" class="headerlink" title="2. Add the GitLab package server and install the package"></a>2. Add the GitLab package server and install the package</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl <span class="_">-s</span>S https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash</div><div class="line">sudo apt-get install gitlab-ce</div></pre></td></tr></table></figure>
-<p>If you are not comfortable installing the repository through a piped script, you can find the <a href="https://packages.gitlab.com/gitlab/gitlab-ce/install" target="_blank" rel="external">entire script here</a> and <a href="https://packages.gitlab.com/gitlab/gitlab-ce" target="_blank" rel="external">select and download the package manually</a> and install using<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -LJO https://packages.gitlab.com/gitlab/gitlab-ce/packages/ubuntu/precise/gitlab-ce-XXX.deb/download</div><div class="line">dpkg -i gitlab-ce-XXX.deb</div></pre></td></tr></table></figure></p>
-<h4 id="3-Configure-and-start-GitLab"><a href="#3-Configure-and-start-GitLab" class="headerlink" title="3. Configure and start GitLab"></a>3. Configure and start GitLab</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gitlab-ctl reconfigure</div></pre></td></tr></table></figure>
-<h4 id="执行第三步之前可对-etc-gitlab-gitlab-rb进行修改配置"><a href="#执行第三步之前可对-etc-gitlab-gitlab-rb进行修改配置" class="headerlink" title="执行第三步之前可对/etc/gitlab/gitlab.rb进行修改配置"></a>执行第三步之前可对/etc/gitlab/gitlab.rb进行修改配置</h4><ol>
-<li>将external_url ‘<font>http</font>://gitadmin-VirtualBox’修改为external_url ‘<font>http</font>://IP地址’或进行DNS解析，使其他内网主机能够访问</li>
-<li>设置SMTP使其能够进行自动发送邮件提示(所提供邮箱必须开启STMP服务)<br><a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md" target="_blank" rel="external">configure a custom SMTP server</a><br>上述提供了大部分邮箱的配置，下面提供163邮箱和QQ邮箱的配置：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#163邮箱配置</span></div><div class="line">gitlab_rails[<span class="string">'smtp_address'</span>] = <span class="string">"smtp.163.com"</span></div><div class="line">gitlab_rails[<span class="string">'smtp_port'</span>] = 25</div><div class="line">gitlab_rails[<span class="string">'smtp_user_name'</span>] = <span class="string">"xxx@163.com"</span>  //邮箱</div><div class="line">gitlab_rails[<span class="string">'smtp_password'</span>] = <span class="string">"xxxxx"</span>  //密码</div><div class="line">gitlab_rails[<span class="string">'smtp_domain'</span>] = <span class="string">"163.com"</span></div><div class="line">gitlab_rails[<span class="string">'smtp_authentication'</span>] = :login</div><div class="line">gitlab_rails[<span class="string">'smtp_enable_starttls_auto'</span>] = <span class="literal">true</span>  </div><div class="line"></div><div class="line"><span class="comment">#修改gitlab配置的发信人</span></div><div class="line">gitlab_rails[<span class="string">'gitlab_email_from'</span>] = <span class="string">"xxx@163.com"</span></div><div class="line">user[<span class="string">"git_user_email"</span>] = <span class="string">"xxx@163.com"</span></div><div class="line"></div><div class="line"><span class="comment">#QQ邮箱配置</span></div><div class="line">gitlab_rails[<span class="string">'smtp_enable'</span>] = <span class="literal">true</span></div><div class="line">gitlab_rails[<span class="string">'smtp_address'</span>] = <span class="string">"smtp.qq.com"</span></div><div class="line">gitlab_rails[<span class="string">'smtp_port'</span>] = 25</div><div class="line">gitlab_rails[<span class="string">'smtp_user_name'</span>] = <span class="string">"xxx@qq.com"</span></div><div class="line">gitlab_rails[<span class="string">'smtp_password'</span>] = <span class="string">"xxxxx"</span>   //开启smtp的独立密码</div><div class="line">gitlab_rails[<span class="string">'smtp_authentication'</span>] = :plain</div><div class="line">gitlab_rails[<span class="string">'smtp_enable_starttls_auto'</span>] = <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment">#修改gitlab配置的发信人</span></div><div class="line">gitlab_rails[<span class="string">'gitlab_email_from'</span>] = <span class="string">"xxx@qq.com"</span></div><div class="line">user[<span class="string">"git_user_email"</span>] = <span class="string">"xxx@qq.com"</span></div></pre></td></tr></table></figure>
-<h4 id="4-Browse-to-the-hostname-and-login"><a href="#4-Browse-to-the-hostname-and-login" class="headerlink" title="4. Browse to the hostname and login"></a>4. Browse to the hostname and login</h4><p>On your first visit, you’ll be redirected to a password reset screen to provide the password for the initial administrator account. Enter your desired password and you’ll be redirected back to the login screen.</p>
-<p>The default account’s username is root. Provide the password you created earlier and login. After login you can change the username if you wish.</p>
-<p>输入<font>http<font>://IP地址(gitlab.rb中配置的url)，首次访问会要求你修改管理员(root)密码。修改完成后登入，管理员用户名为root</font></font></p>
-<h4 id="5-生成和上传SSH-key"><a href="#5-生成和上传SSH-key" class="headerlink" title="5. 生成和上传SSH key"></a>5. 生成和上传SSH key</h4><p>设置管理员的邮箱(eg.admin@163.com)，生成SSH key的时候要用到。<br>生成SSH key:<br>打开Git Bash<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"admin@163.com"</span></div></pre></td></tr></table></figure></p>
-<p>按三下空格，表示生成五米密钥对，此时会在提示目录下生成一个密钥对，id_rsa为私钥，id_rsa.pub为公钥，公钥是要上传的。打开公钥文件复制里面的内容，在Gitlab管理后台Profile Setting-&gt;SSH Keys处粘贴，Add key完成。</p>
-<p>上传SSH key后可以使用SSH进行远程pull/push</p>
+<h4 id="3-登录主服务器的mysql，查询master的状态"><a href="#3-登录主服务器的mysql，查询master的状态" class="headerlink" title="3.登录主服务器的mysql，查询master的状态"></a>3.登录主服务器的mysql，查询master的状态</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">mysql&gt;show master status;</div><div class="line">+------------------+----------+--------------+------------------+  </div><div class="line">| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |</div><div class="line">+------------------+----------+--------------+------------------+</div><div class="line">| mysql-bin.000004 |      308 |              |                  |</div><div class="line">+------------------+----------+--------------+------------------+</div><div class="line">1 row <span class="keyword">in</span> <span class="built_in">set</span> (0.00 sec)</div><div class="line">注：执行完此步骤后不要再操作主服务器MYSQL，防止主服务器状态值变化</div></pre></td></tr></table></figure>
+<h4 id="4-修改从服务器slave"><a href="#4-修改从服务器slave" class="headerlink" title="4.修改从服务器slave:"></a>4.修改从服务器slave:</h4><p>修改从服务器Mysql配置文件my.cnf<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="section">[mysqld]</span></div><div class="line"><span class="attr">log-bin</span>=mysql-bin   //[不是必须]启用二进制日志</div><div class="line"><span class="attr">server-id</span>=<span class="number">226</span>      //[必须]服务器唯一ID，默认是<span class="number">1</span>，一般取IP最后一段</div></pre></td></tr></table></figure></p>
+<p>修改完成后重启生效。</p>
+<h4 id="5-配置从服务器Slave"><a href="#5-配置从服务器Slave" class="headerlink" title="5.配置从服务器Slave:"></a>5.配置从服务器Slave:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mysql&gt;change master to master_host=<span class="string">'192.168.145.222'</span>,master_user=<span class="string">'user'</span>,master_password=<span class="string">'password'</span>,master_<span class="built_in">log</span>_file=<span class="string">'mysql-bin.000004'</span>,master_<span class="built_in">log</span>_pos=308;   </div><div class="line">//注意不要断开，308数字前后无单引号。</div><div class="line">mysql&gt;start slave;    //启动从服务器复制功能</div></pre></td></tr></table></figure>
+<h4 id="6-检查从服务器复制功能状态："><a href="#6-检查从服务器复制功能状态：" class="headerlink" title="6.检查从服务器复制功能状态："></a>6.检查从服务器复制功能状态：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show slave status\G</div><div class="line">*************************** 1. row ***************************</div><div class="line">      Slave_IO_State: Waiting <span class="keyword">for</span> master to send event</div><div class="line">      Master_Host: 192.168.2.222  //主服务器地址</div><div class="line">      Master_User: mysync   //授权帐户名，尽量避免使用root</div><div class="line">      Master_Port: 3306    //数据库端口，部分版本没有此行</div><div class="line">      Connect_Retry: 60</div><div class="line">      Master_Log_File: mysql-bin.000004</div><div class="line">      Read_Master_Log_Pos: 600     //<span class="comment">#同步读取二进制日志的位置，大于等于Exec_Master_Log_Pos</span></div><div class="line">      Relay_Log_File: ddte-relay-bin.000003</div><div class="line">      Relay_Log_Pos: 251</div><div class="line">      Relay_Master_Log_File: mysql-bin.000004</div><div class="line">      Slave_IO_Running: Yes    //此状态必须YES</div><div class="line">      Slave_SQL_Running: Yes     //此状态必须YES</div><div class="line">      ......</div></pre></td></tr></table></figure>
+<p>注：Slave_IO及Slave_SQL进程必须正常运行，即YES状态，否则都是错误的状态(如：其中一个NO均属错误)。</p>
+<p>以上操作过程，主从服务器配置完成。</p>
 
         
         </div>
@@ -278,7 +270,7 @@
 
 </div>
 
-    <a data-url="http:christmas92.github.io/2016/07/22/Ubuntu14-04配置Gitlab/" data-id="cir1p7yib0000vkvczkz91dwa" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http:christmas92.github.io/2016/07/25/Mysql主从复制/" data-id="cir1p7yii0001vkvce0thw925" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -346,7 +338,7 @@
 
             
     
-        <a href="http:christmas92.github.io/2016/07/22/Ubuntu14-04配置Gitlab/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http:christmas92.github.io/2016/07/22/Ubuntu14-04配置Gitlab/">Comments</a>
+        <a href="http:christmas92.github.io/2016/07/25/Mysql主从复制/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http:christmas92.github.io/2016/07/25/Mysql主从复制/">Comments</a>
     
 
         </footer>
@@ -355,15 +347,11 @@
         
 <nav id="article-nav">
     
-        <a href="/2016/07/25/Mysql主从复制/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    Mysql主从复制
-                
-            </div>
-        </a>
     
+        <a href="/2016/07/22/Ubuntu14-04配置Gitlab/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Ubuntu14.04安装配置Gitlab</div>
+        </a>
     
 </nav>
 
@@ -504,9 +492,9 @@
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http:christmas92.github.io/2016/07/22/Ubuntu14-04配置Gitlab/';
+            this.page.url = 'http:christmas92.github.io/2016/07/25/Mysql主从复制/';
         
-        this.page.identifier = 'Ubuntu14-04配置Gitlab';
+        this.page.identifier = 'Mysql主从复制';
     };
     (function() {
         var d = document, s = d.createElement('script');
