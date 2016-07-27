@@ -3,14 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Christmas92</title>
+    <title>Mysql语句 | Christmas92</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Christmas92">
-<meta property="og:url" content="http:christmas92.github.io/index.html">
+    <meta name="description" content="1.DDL(Data Definition Languages)1234567891011121314use dbnameshow databasesshow tablesdesc tablenameshow create table tablename \GCREATE DATABASE dbnameDROP DATABASE dbnameCREATE TABLE tablename (col_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql语句">
+<meta property="og:url" content="http:christmas92.github.io/2016/07/27/Mysql语句/index.html">
 <meta property="og:site_name" content="Christmas92">
+<meta property="og:description" content="1.DDL(Data Definition Languages)1234567891011121314use dbnameshow databasesshow tablesdesc tablenameshow create table tablename \GCREATE DATABASE dbnameDROP DATABASE dbnameCREATE TABLE tablename (col_">
+<meta property="og:updated_time" content="2016-07-27T11:02:23.557Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Christmas92">
+<meta name="twitter:title" content="Mysql语句">
+<meta name="twitter:description" content="1.DDL(Data Definition Languages)1234567891011121314use dbnameshow databasesshow tablesdesc tablenameshow create table tablename \GCREATE DATABASE dbnameDROP DATABASE dbnameCREATE TABLE tablename (col_">
     
 
     
@@ -201,8 +205,7 @@
 </aside>
 
             
-            <section id="main">
-    <article id="post-Mysql语句" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Mysql语句" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -210,8 +213,8 @@
             <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/27/Mysql语句/">Mysql语句</a>
+        <h1 class="article-title" itemprop="name">
+            Mysql语句
         </h1>
     
 
@@ -239,10 +242,17 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h4 id="1-DDL-Data-Definition-Languages"><a href="#1-DDL-Data-Definition-Languages" class="headerlink" title="1.DDL(Data Definition Languages)"></a>1.DDL(Data Definition Languages)</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">use</span> dbname</div><div class="line"><span class="keyword">show</span> <span class="keyword">databases</span></div><div class="line"><span class="keyword">show</span> <span class="keyword">tables</span></div><div class="line"><span class="keyword">desc</span> tablename</div><div class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> tablename \G</div><div class="line"></div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> dbname</div><div class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> dbname</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tablename (col_name_1 col_type_1 <span class="keyword">constraints</span>,col_name_2 col_type_2 <span class="keyword">constraints</span>,...col_name_n col_type_n <span class="keyword">constraints</span>)</div><div class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> tablename</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tablename <span class="keyword">MODIFY</span> [<span class="keyword">COLUMN</span>] [<span class="keyword">FIRST</span>|<span class="keyword">AFTER</span> col_name]</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tablename <span class="keyword">ADD</span> [<span class="keyword">COLUMN</span>] [<span class="keyword">FIRST</span>|<span class="keyword">AFTER</span> col_name]</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tablename <span class="keyword">DROP</span> col_name</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tablename <span class="keyword">CHANGE</span> old_col_name [NEW_COLUMN] [<span class="keyword">FIRST</span>|<span class="keyword">AFTER</span> col_name]</div></pre></td></tr></table></figure></p>
-            <p class="article-more-link">
-                <a href="/2016/07/27/Mysql语句/#more">Read More</a>
-            </p>
+            
+            <h4 id="1-DDL-Data-Definition-Languages"><a href="#1-DDL-Data-Definition-Languages" class="headerlink" title="1.DDL(Data Definition Languages)"></a>1.DDL(Data Definition Languages)</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">use</span> dbname</div><div class="line"><span class="keyword">show</span> <span class="keyword">databases</span></div><div class="line"><span class="keyword">show</span> <span class="keyword">tables</span></div><div class="line"><span class="keyword">desc</span> tablename</div><div class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> tablename \G</div><div class="line"></div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> dbname</div><div class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> dbname</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tablename (col_name_1 col_type_1 <span class="keyword">constraints</span>,col_name_2 col_type_2 <span class="keyword">constraints</span>,...col_name_n col_type_n <span class="keyword">constraints</span>)</div><div class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> tablename</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tablename <span class="keyword">MODIFY</span> [<span class="keyword">COLUMN</span>] [<span class="keyword">FIRST</span>|<span class="keyword">AFTER</span> col_name]</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tablename <span class="keyword">ADD</span> [<span class="keyword">COLUMN</span>] [<span class="keyword">FIRST</span>|<span class="keyword">AFTER</span> col_name]</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tablename <span class="keyword">DROP</span> col_name</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tablename <span class="keyword">CHANGE</span> old_col_name [NEW_COLUMN] [<span class="keyword">FIRST</span>|<span class="keyword">AFTER</span> col_name]</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="2-DML-Data-Manipulation-Languages"><a href="#2-DML-Data-Manipulation-Languages" class="headerlink" title="2.DML(Data Manipulation Languages)"></a>2.DML(Data Manipulation Languages)</h4><blockquote>
+<h5 id="2-1-插入记录"><a href="#2-1-插入记录" class="headerlink" title="2.1 插入记录"></a>2.1 插入记录</h5><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#插入一条记录</div><div class="line">INSERT INTO tablename (field1,field2,...fieldn) VALUES (value1,value2,...valuen)</div><div class="line">#插入多条记录</div><div class="line">INSERT INTO tablename (field1,field2,...fieldn)</div><div class="line">VALUES</div><div class="line">(record1_value1,record1_value2,...record1_valuen),</div><div class="line">(record2_value1,record2_value2,...record2_valuen),</div><div class="line">...</div><div class="line">(recordn_value1,recordn_value2,...recordn_valuen)</div></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="2-2-更新记录"><a href="#2-2-更新记录" class="headerlink" title="2.2 更新记录"></a>2.2 更新记录</h5><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#更新一个表中的记录</div><div class="line">UPDATE tablename SET field1=value1,field2=value2,...fieldn=valuen [WHERE CONDITION]</div><div class="line">#多表更新</div><div class="line">UPDATE t1,t2,...tn SET t1.field=expr1,tn.fieldn=exprn [WHERE CONDITION]</div></pre></td></tr></table></figure>
+<h5 id="2-3-删除记录"><a href="#2-3-删除记录" class="headerlink" title="2.3 删除记录"></a>2.3 删除记录</h5><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#单表删除</div><div class="line">DELETE FROM tablename [WHERE CONDITION]</div><div class="line">#多表删除</div><div class="line">DELETE t1,t2,...tn FROM t1,t2,...tn [WHERE CONDITION]</div></pre></td></tr></table></figure>
+<p><strong>注：不添加条件语句会将表中所有记录删除</strong></p>
+<h5 id="2-4-查询记录"><a href="#2-4-查询记录" class="headerlink" title="2.4 查询记录"></a>2.4 查询记录</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tablename [<span class="keyword">WHERE</span> CONDITION]</div><div class="line">#去重</div><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">field</span> <span class="keyword">FROM</span> tablename [<span class="keyword">WHERE</span> CONDITION]</div><div class="line">#升序降序</div><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tablename [<span class="keyword">WHERE</span> CONDITON] [<span class="keyword">ORDER</span> <span class="keyword">BY</span> field1 [<span class="keyword">DESC</span>|<span class="keyword">ASC</span>],field2 [<span class="keyword">DESC</span>|<span class="keyword">ASC</span>],...fieldn [<span class="keyword">DESC</span>|<span class="keyword">ASC</span>]]</div><div class="line">#排序和限制</div><div class="line"><span class="keyword">SELECT</span> ...[<span class="keyword">LIMIT</span> offset_start,<span class="keyword">row_count</span>]</div><div class="line">#聚合</div><div class="line"><span class="keyword">SELECT</span> [field1,field2,...fieldn] fun_name</div><div class="line"><span class="keyword">FROM</span> tablename</div><div class="line">[<span class="keyword">WHERE</span> CONDITION]</div><div class="line">[<span class="keyword">GROUP</span> <span class="keyword">BY</span> field1,field2,...fieldn [<span class="keyword">WITH</span> <span class="keyword">ROLLUP</span>]]</div><div class="line">[<span class="keyword">HAVING</span> CONDITION]</div><div class="line">#内连接</div><div class="line"><span class="keyword">SELECT</span> field1,field2,...fieldn <span class="keyword">FROM</span> t1,t2 <span class="keyword">WHERE</span> t1.fieldn = t2.fieldn</div><div class="line">#外链接-左连接</div><div class="line"><span class="keyword">SELECT</span> field1,field2,...fieldn <span class="keyword">FROM</span> t1 <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> t2 <span class="keyword">on</span> t1.fieldn = t2.fieldn</div><div class="line">#外链接-右连接</div><div class="line"><span class="keyword">SELECT</span> field1,field2,...fieldn <span class="keyword">FROM</span> t1 <span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> t2 <span class="keyword">on</span> t1.fieldn = t2.fieldn</div><div class="line"><span class="keyword">SELECT</span> col_name(s) <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> col_name <span class="keyword">IN</span> (value1,value2,...)</div></pre></td></tr></table></figure>
+<h4 id="3-DCL-Data-Control-Languages"><a href="#3-DCL-Data-Control-Languages" class="headerlink" title="3.DCL(Data Control Languages)"></a>3.DCL(Data Control Languages)</h4>
         
         </div>
         <footer class="article-footer">
@@ -326,269 +336,33 @@
         </footer>
     </div>
     
-</article>
-
-
-
-    <article id="post-Mysql主从复制" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
         
-        
-        
-            <header class="article-header">
-                
+<nav id="article-nav">
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/25/Mysql主从复制/">Mysql主从复制</a>
-        </h1>
     
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/07/25/Mysql主从复制/">
-            <time datetime="2016-07-25T03:02:41.000Z" itemprop="datePublished">2016-07-25</time>
+        <a href="/2016/07/25/Mysql主从复制/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Mysql主从复制</div>
         </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Mysql/">Mysql</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="1-修改主服务器master"><a href="#1-修改主服务器master" class="headerlink" title="1.修改主服务器master:"></a>1.修改主服务器master:</h4><p>修改主服务器Mysql配置文件my.cnf<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="section">[mysqld]</span></div><div class="line"><span class="attr">log-bin</span>=mysql-bin   //[必须]启用二进制日志</div><div class="line"><span class="attr">server-id</span>=<span class="number">222</span>      //[必须]服务器唯一ID，默认是<span class="number">1</span>，一般取IP最后一段</div></pre></td></tr></table></figure></p>
-<p>修改完成后重启生效。</p>
-<h4 id="2-在主服务器上建立帐户并授权slave"><a href="#2-在主服务器上建立帐户并授权slave" class="headerlink" title="2.在主服务器上建立帐户并授权slave:"></a>2.在主服务器上建立帐户并授权slave:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;GRANT REPLICATION SLAVE ON *.* to <span class="string">'user'</span>@<span class="string">'%'</span> identified by <span class="string">'password'</span>;</div><div class="line">//一般不用root帐号,<span class="string">'%'</span>表示所有客户端都可能连,此处可用具体客户端IP代替,如192.168.145.226,加强安全。</div></pre></td></tr></table></figure></p>
-            <p class="article-more-link">
-                <a href="/2016/07/25/Mysql主从复制/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http:christmas92.github.io/2016/07/25/Mysql主从复制/" data-id="cir4s8pe20000tsvc3t0o0cxs" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
     
-        <a href="http:christmas92.github.io/2016/07/25/Mysql主从复制/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http:christmas92.github.io/2016/07/25/Mysql主从复制/">Comments</a>
-    
+</nav>
 
-        </footer>
-    </div>
+
     
 </article>
 
 
-
-    <article id="post-Ubuntu14-04配置Gitlab" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/22/Ubuntu14-04配置Gitlab/">Ubuntu14.04安装配置Gitlab</a>
-        </h1>
+    <section id="comments">
     
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/07/22/Ubuntu14-04配置Gitlab/">
-            <time datetime="2016-07-21T16:00:00.000Z" itemprop="datePublished">2016-07-22</time>
-        </a>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
 
 
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Git/">Git</a>, <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/项目管理/">项目管理</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程"><a href="#关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程" class="headerlink" title="关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程"></a><font face="黑体" >关于Ubuntu、CentOS其他版本下安装配置，Gitlab官网提供了相关教程</font></h4><font face="黑体" size=4 ><a href="https://about.gitlab.com/downloads/">https://about.gitlab.com/downloads/</a></font>
-
-<h4 id="1-Install-and-configure-the-necessary-dependencies"><a href="#1-Install-and-configure-the-necessary-dependencies" class="headerlink" title="1. Install and configure the necessary dependencies"></a>1. Install and configure the necessary dependencies</h4><p>If you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md">configure a custom SMTP server</a> and <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md#smtp-on-localhost">configure it as an SMTP server.</a></p>
-<p>On Centos 6 and 7, the commands below will also open HTTP and SSH access in the system firewall.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install curl openssh-server ca-certificates postfix</div></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/2016/07/22/Ubuntu14-04配置Gitlab/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http:christmas92.github.io/2016/07/22/Ubuntu14-04配置Gitlab/" data-id="cir4s8pei0003tsvc6brfqtjg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
     
-        <a href="http:christmas92.github.io/2016/07/22/Ubuntu14-04配置Gitlab/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http:christmas92.github.io/2016/07/22/Ubuntu14-04配置Gitlab/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
+    </section>
 
 </section>
             
@@ -729,11 +503,13 @@
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = 'http:christmas92.github.io/2016/07/27/Mysql语句/';
+        
+        this.page.identifier = 'Mysql语句';
     };
     (function() {
         var d = document, s = d.createElement('script');
-        s.src = '//' + 'christmas92' + '.disqus.com/count.js';
+        s.src = '//' + 'christmas92' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
